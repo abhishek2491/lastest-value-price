@@ -12,6 +12,10 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class is used for handling various constrains exception.
+ * We can also implement more methods for handling the other exception response.
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

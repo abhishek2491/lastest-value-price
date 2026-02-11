@@ -19,6 +19,13 @@ import static lastest.value.price.constant.InstrumentPriceConstant.*;
 
 @Service
 public class ProducerService {
+    /**
+     * This map saves the batch details with key as batch and values as the map of instrument deatails and its id as key.
+     * This map act as interim memory for the application.
+     * If batch details which are completed or cancelled also need to be persisted,
+     * then we can use value as a custom object rather than Map<String, InstrumentPriceModel> which preserve the status of
+     * batch as well.
+     */
     public static final ConcurrentMap<Long, Map<String, InstrumentPriceModel>> intrimPrice = new ConcurrentHashMap<>();
     private static final Logger log = LoggerFactory.getLogger(ProducerService.class);
 

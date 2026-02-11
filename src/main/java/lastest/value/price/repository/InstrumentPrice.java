@@ -13,7 +13,15 @@ import java.util.concurrent.atomic.AtomicLong;
 @Setter
 @Component
 public class InstrumentPrice {
+    /**
+     * This map store the lastest price of the instruments.
+     */
     private static Map<String, InstrumentPriceModel> lastestPrice = new ConcurrentHashMap<>();
+
+    /**
+     * This is used ofr generating the batchId in sequence starting from 1.
+     * Alternatively , It can also be maintained the unique batch id by using uuid.
+     */
     private static AtomicLong batchId = new AtomicLong(1);
 
     public static AtomicLong getBatchId() {
